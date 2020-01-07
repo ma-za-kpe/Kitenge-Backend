@@ -11,6 +11,7 @@ const xss = require("xss-clean");
 const rateLimit = require("express-rate-limit");
 const hpp = require("hpp");
 const cors = require("cors");
+const errorResponse = require("./utils/errorResponse");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
