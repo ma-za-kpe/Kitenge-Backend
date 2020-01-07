@@ -1,0 +1,7 @@
+node_modules/
+config/config.env
+.env
+npm-debug.log
+.DS_Store
+/*.env
+sendgrid.envsendgrid.env
