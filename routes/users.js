@@ -1,9 +1,30 @@
 var express = require('express');
 var router = express.Router();
+//model
+const User = require('../models/User');
+// controllers
+const UserController = require('../controllers/user');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+const router = express.Router({
+  mergeParams: true
 });
+
+const advancedResults = require('../middleware/advancedResults');
+const ProtectionController = require('../middleware/auth');
+
+
+router.use(ProtectionController.protect);
+router.use(ProtectionController.authorize('admin'));
+
+router
+  .route('/')
+  .get(advancedResults(User), UserController.getUsers)
+  .post(UserController.createUser);
+
+router
+  .route('/:id')
+  .get(UserController.getUser)
+  .put(UserController.updateUser)
+  .delete(UserController.deleteUser);
 
 module.exports = router;
