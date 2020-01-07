@@ -17,7 +17,7 @@ Follow me on <a href="https://twitter.com/makpalyy">Twitter</a> and <a href="htt
 - **User registration API** - Using [passport](https://www.npmjs.com/package/jsonwebtoken)
 - **Password reset API** - Sending emails with [SendGrid API](https://sendgrid.com/docs/API_Reference/index.html) (optional)
 - **Listing query strings** - `q`, `page`, `limit`, `fields` etc.
-- **API docs generator** - Using [apidoc](https://github.com/thedevsaddam/docgen)
+- **API docs generator** - Using [docgen](https://github.com/thedevsaddam/docgen)
 - **Love ♥** - Using [maku](https://github.com/ma-za-kpe)
 
 ## Installation
@@ -31,7 +31,7 @@ After you generate your project, these commands are available in `package.json`.
 ```bash
 Clone this github repo in your terminal
 
-$ cd devCamper
+$ cd Kitenge-Backend
 
 $ npm install
 
