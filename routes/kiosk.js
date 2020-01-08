@@ -1,8 +1,8 @@
 var express = require('express');
 
 //other resource routers
-const itemRouter = require('./item');
-const reviewRouter = require('./reviews');
+// const itemRouter = require('./item');
+// const reviewRouter = require('./reviews');
 
 
 const Kiosk = require('../models/Kiosk');
@@ -11,9 +11,9 @@ const ProtectionController = require('../middleware/auth');
 
 var router = express.Router();
 
-//re-route into other resources routers
-router.use('/:kioskId/courses', courseRouter);
-router.use('/:kioskId/reviews', reviewRouter);
+// //re-route into other resources routers
+// router.use('/:kioskId/courses', itemRouter);
+// router.use('/:kioskId/reviews', reviewRouter);
 
 // controllers
 const KioskController = require('../controllers/kiosk');

@@ -34,9 +34,9 @@ const KioskcampSchema = new mongoose.Schema({
         enum: [
             'Art & crafts',
             'kitenge cloth',
-            'african shoes',
+            'African shoes',
             'Beeds',
-            'jewellery',
+            'Jewellery',
             'Other'
         ]
     },

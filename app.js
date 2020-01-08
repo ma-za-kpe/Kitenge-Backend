@@ -16,7 +16,7 @@ const errorResponse = require("./utils/errorResponse");
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var authRouter = require("./routes/auth");
-
+var kioskRouter = require("./routes/kiosk");
 
 // db
 require('dotenv').config()
@@ -64,6 +64,7 @@ app.use(fileupload());
 app.use('/', indexRouter);
 app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/kiosk', kioskRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
