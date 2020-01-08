@@ -21,8 +21,8 @@ const KioskController = require('../controllers/kiosk');
 /* GET and POST  all Kiosk listing. */
 router.route('/').get(advancedResults(Kiosk, 'items'), KioskController.getAllKiosks).post(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.createKiosk);
 
-/* GET bootcamp listing, UPDATE bootcamp listing, DELETE bootcamp listing. */
-router.route('/:id').get(KioskController.getOneKiosk).put(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.updateKiosks).delete(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.deleteKiosks);
+/* GET kiosk listing, UPDATE kiosk listing, DELETE kiosk listing. */
+router.route('/:id').get(KioskController.getOneKiosk).put(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.updateKiosk).delete(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.deleteKiosk);
 
 /* upload photo */
 router.route('/:id/photo').put(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.kioskPhotoUpload);
