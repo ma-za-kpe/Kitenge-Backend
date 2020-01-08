@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var authRouter = require("./routes/auth");
 var kioskRouter = require("./routes/kiosk");
+var itemRouter = require("./routes/item");
 
 // db
 require('dotenv').config()
@@ -65,6 +66,7 @@ app.use('/', indexRouter);
 app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/kiosk', kioskRouter);
+app.use('/api/v1/item', itemRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
