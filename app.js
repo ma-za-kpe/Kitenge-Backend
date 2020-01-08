@@ -14,7 +14,7 @@ const cors = require("cors");
 const errorResponse = require("./utils/errorResponse");
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 var authRouter = require("./routes/auth");
 
 
@@ -62,7 +62,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
 
 app.use('/', indexRouter);
-app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/auth', authRouter);
 
 // catch 404 and forward to error handler
