@@ -19,7 +19,7 @@ var authRouter = require("./routes/auth");
 
 
 // db
-// require('dotenv').config()
+require('dotenv').config()
 require("./config/db");
 
 var app = express();
