@@ -14,7 +14,7 @@ const router = express.Router({
 
 /* GET and POST  all item listing. */
 router.route('/')
-    .get(advancedResults(Course, {
+    .get(advancedResults(Item, {
         path: 'item',
         select: 'name description'
     }), ItemController.getAllItems)

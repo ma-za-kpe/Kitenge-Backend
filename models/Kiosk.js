@@ -83,7 +83,7 @@ KioskcampSchema.pre('remove', async function (next) {
     next();
 });
 
-//reverse populate with virtuals (field called items and an array for all the kiosks in that kiosk.)
+//reverse populate with virtuals (field called items and an array for all the items in that kiosk.)
 KioskcampSchema.virtual('items', {
     ref: 'Item',
     localField: '_id',

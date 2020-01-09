@@ -1,7 +1,7 @@
 var express = require('express');
 
 //other resource routers
-// const itemRouter = require('./item');
+const itemRouter = require('./item');
 // const reviewRouter = require('./reviews');
 
 
@@ -12,7 +12,7 @@ const ProtectionController = require('../middleware/auth');
 var router = express.Router();
 
 // //re-route into other resources routers
-// router.use('/:kioskId/courses', itemRouter);
+router.use('/:kioskId/items', itemRouter);
 // router.use('/:kioskId/reviews', reviewRouter);
 
 // controllers
