@@ -19,7 +19,7 @@ router.use('/:kioskId/reviews', reviewRouter);
 const KioskController = require('../controllers/kiosk');
 
 /* GET and POST  all Kiosk listing. */
-router.route('/').get(advancedResults(Kiosk, 'items'), KioskController.getAllKiosks).post(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.createKiosk);
+router.route('/').get(advancedResults(Kiosk, 'items reviews'), KioskController.getAllKiosks).post(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.createKiosk);
 
 /* GET kiosk listing, UPDATE kiosk listing, DELETE kiosk listing. */
 router.route('/:id').get(KioskController.getOneKiosk).put(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.updateKiosk).delete(ProtectionController.protect, ProtectionController.authorize("vendor", "admin"), KioskController.deleteKiosk);

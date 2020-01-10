@@ -91,4 +91,20 @@ KioskcampSchema.virtual('items', {
     justOne: false
 });
 
+//cascade delete items when a kiosk is deleted
+KioskcampSchema.pre('remove', async function (next) {
+    await this.model('Review').deleteMany({
+        kiosk: this._id
+    });
+    next();
+});
+
+//reverse populate with virtuals (field called items and an array for all the items in that kiosk.)
+KioskcampSchema.virtual('reviews', {
+    ref: 'Review',
+    localField: '_id',
+    foreignField: 'kiosk',
+    justOne: false
+});
+
 module.exports = mongoose.model('Kiosk', KioskcampSchema, "kiosk");
