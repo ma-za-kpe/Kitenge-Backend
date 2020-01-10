@@ -2,7 +2,7 @@ var express = require('express');
 
 //other resource routers
 const itemRouter = require('./item');
-// const reviewRouter = require('./reviews');
+const reviewRouter = require('./review');
 
 
 const Kiosk = require('../models/Kiosk');
@@ -13,7 +13,7 @@ var router = express.Router();
 
 // //re-route into other resources routers
 router.use('/:kioskId/items', itemRouter);
-// router.use('/:kioskId/reviews', reviewRouter);
+router.use('/:kioskId/reviews', reviewRouter);
 
 // controllers
 const KioskController = require('../controllers/kiosk');

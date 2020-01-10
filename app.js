@@ -19,9 +19,10 @@ var adminRouter = require("./routes/admin");
 var authRouter = require("./routes/auth");
 var kioskRouter = require("./routes/kiosk");
 var itemRouter = require("./routes/item");
+var reviewRouter = require("./routes/review");
 
 // db
-// require("dotenv").config();
+require("dotenv").config();
 require("./config/db");
 
 var app = express();
@@ -72,6 +73,7 @@ app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/kiosk", kioskRouter);
 app.use("/api/v1/item", itemRouter);
+app.use("/api/v1/review", reviewRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
