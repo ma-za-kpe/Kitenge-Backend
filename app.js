@@ -22,7 +22,7 @@ var itemRouter = require("./routes/item");
 var reviewRouter = require("./routes/review");
 
 // db
-require("dotenv").config();
+// require("dotenv").config();
 require("./config/db");
 
 var app = express();
