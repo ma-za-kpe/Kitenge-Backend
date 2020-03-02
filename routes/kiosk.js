@@ -4,7 +4,6 @@ var express = require('express');
 const itemRouter = require('./item');
 const reviewRouter = require('./review');
 
-
 const Kiosk = require('../models/Kiosk');
 const advancedResults = require('../middleware/advancedResults');
 const ProtectionController = require('../middleware/auth');
@@ -14,6 +13,7 @@ var router = express.Router();
 // //re-route into other resources routers
 router.use('/:kioskId/items', itemRouter);
 router.use('/:kioskId/reviews', reviewRouter);
+
 
 // controllers
 const KioskController = require('../controllers/kiosk');

@@ -20,9 +20,12 @@ var authRouter = require("./routes/auth");
 var kioskRouter = require("./routes/kiosk");
 var itemRouter = require("./routes/item");
 var reviewRouter = require("./routes/review");
+var cartRouter = require("./routes/cart");
+var developerRouter = require("./routes/developer");
+
 
 // db
-// require("dotenv").config();
+require("dotenv").config();
 require("./config/db");
 
 var app = express();
@@ -69,11 +72,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(fileupload());
 
 app.use("/", indexRouter);
+app.use("/developer", developerRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/kiosk", kioskRouter);
 app.use("/api/v1/item", itemRouter);
 app.use("/api/v1/review", reviewRouter);
+app.use("/api/v1/cart", cartRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

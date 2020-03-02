@@ -1,5 +1,8 @@
 var express = require('express');
 
+//other resource routers
+const cartRouter = require('./cart');
+
 // controllers
 const ItemController = require('../controllers/item');
 
@@ -11,6 +14,10 @@ const ProtectionController = require('../middleware/auth');
 const router = express.Router({
     mergeParams: true
 });
+
+// //re-route into other resources routers
+router.use('/:itemId/cartItem', cartRouter);
+
 
 /* GET and POST  all item listing. */
 router.route('/')

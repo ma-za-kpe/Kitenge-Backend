@@ -34,6 +34,13 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+}, {
+    toJSON: {
+        virtuals: true
+    },
+    toObject: {
+        virtuals: true
+    }
 });
 
 // Encrypt password using bcrypt
@@ -76,5 +83,21 @@ UserSchema.methods.getResetPasswordToken = function () {
 
     return resetToken;
 };
+
+//cascade delete items when a kiosk is deleted
+UserSchema.pre('remove', async function (next) {
+    await this.model('Cart').deleteMany({
+        user: this._id
+    });
+    next();
+});
+
+//reverse populate with virtuals (field called items and an array for all the items in that kiosk.)
+UserSchema.virtual('cartItems', {
+    ref: 'Cart',
+    localField: '_id',
+    foreignField: 'User',
+    justOne: false
+});
 
 module.exports = mongoose.model("User", UserSchema);
