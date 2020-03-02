@@ -74,7 +74,7 @@ app.use(fileupload());
 
 app.use("/", indexRouter);
 app.use("/developer", developerRouter);
-app.use("/api/v1/vendors", vendorRouter);
+app.use("/vendors", vendorRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/kiosk", kioskRouter);
