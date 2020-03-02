@@ -25,8 +25,8 @@ var developerRouter = require("./routes/developer");
 
 
 // db
-require("dotenv").config();
-require("./config/db");
+// require("dotenv").config();
+// require("./config/db");
 
 var app = express();
 
