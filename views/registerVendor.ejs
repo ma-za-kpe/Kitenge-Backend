@@ -58,52 +58,55 @@
         <div class="container" style="height:1300px;">
             <div class="row mt-5 pt-5">
                 <div class="col-sm-12">
-                    <h2 class="text-center">LOG IN</h2>
-                    <!-- Default form login -->
+                    <h2 class="text-center">SIGN UP</h2>
+                    <!-- Default form register -->
                     <form class="text-center border border-light p-5" action="#!">
 
-                        <p class="h4 mb-4">Sign in</p>
+                        <p class="h4 mb-4">Sign up</p>
 
-                        <!-- Email -->
-                        <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-                        <!-- Password -->
-                        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4"
-                            placeholder="Password">
-
-                        <div class="d-flex justify-content-around">
-                            <div>
-                                <!-- Remember me -->
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-                                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember
-                                        me</label>
-                                </div>
+                        <div class="form-row mb-4">
+                            <div class="col">
+                                <!-- First name -->
+                                <input type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                    placeholder="First name">
                             </div>
-                            <div>
-                                <!-- Forgot password -->
-                                <a href="">Forgot password?</a>
+                            <div class="col">
+                                <!-- Last name -->
+                                <input type="text" id="defaultRegisterFormLastName" class="form-control"
+                                    placeholder="Last name">
                             </div>
                         </div>
 
-                        <!-- Sign in button -->
-                        <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+                        <!-- E-mail -->
+                        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4"
+                            placeholder="E-mail">
 
-                        <!-- Register -->
-                        <p>Not a member?
-                            <a href="/vendors/register">Register</a>
-                        </p>
+                        <!-- Password -->
+                        <input type="password" id="defaultRegisterFormPassword" class="form-control"
+                            placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                            At least 8 characters and 1 digit
+                        </small>
 
-                        <!-- Social login -->
-                        <p>or sign in with:</p>
+                        <!-- Phone number -->
+                        <input type="text" id="defaultRegisterPhonePassword" class="form-control"
+                            placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+                        <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                            Optional - for two step authentication
+                        </small>
 
-                        <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
-                        <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
-                        <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
-                        <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+                        <!-- Sign up button -->
+                        <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+                        <hr>
+
+                        <!-- Terms of service -->
+                        <p>By clicking
+                            <em>Sign up</em> you agree to our
+                            <a href="" target="_blank">terms of service</a>
 
                     </form>
-                    <!-- Default form login -->
+                    <!-- Default form register -->
                 </div>
             </div>
         </div>

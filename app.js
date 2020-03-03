@@ -24,10 +24,9 @@ var cartRouter = require("./routes/cart");
 var developerRouter = require("./routes/developer");
 var vendorRouter = require("./routes/vendor");
 
-
 // db
 // require("dotenv").config();
-// require("./config/db");
+require("./config/db");
 
 var app = express();
 
@@ -81,7 +80,6 @@ app.use("/api/v1/kiosk", kioskRouter);
 app.use("/api/v1/item", itemRouter);
 app.use("/api/v1/review", reviewRouter);
 app.use("/api/v1/cart", cartRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

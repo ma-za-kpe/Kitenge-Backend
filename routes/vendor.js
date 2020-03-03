@@ -8,4 +8,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/register', function (req, res, next) {
+    res.render('registerVendor', {
+        title: 'register'
+    });
+});
+
 module.exports = router;
