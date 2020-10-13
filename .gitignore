@@ -5,3 +5,5 @@ npm-debug.log
 .DS_Store
 /*.env
 sendgrid.envsendgrid.env
+app.js
+views

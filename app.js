@@ -71,15 +71,15 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(fileupload());
 
-app.use("/", indexRouter);
-app.use("/developer", developerRouter);
-app.use("/vendors", vendorRouter);
-app.use("/api/v1/admin", adminRouter);
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/kiosk", kioskRouter);
-app.use("/api/v1/item", itemRouter);
-app.use("/api/v1/review", reviewRouter);
-app.use("/api/v1/cart", cartRouter);
+app.use("/api/v2/home", indexRouter);
+app.use("/api/v2/developer", developerRouter);
+app.use("/api/v2/vendors", vendorRouter);
+app.use("/api/v2/admin", adminRouter);
+app.use("/api/v2/auth", authRouter);
+app.use("/api/v2/kiosk", kioskRouter);
+app.use("/api/v2/item", itemRouter);
+app.use("/api/v2/review", reviewRouter);
+app.use("/api/v2/cart", cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
