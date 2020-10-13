@@ -6,4 +6,4 @@ npm-debug.log
 /*.env
 sendgrid.envsendgrid.env
 app.js
-views
+views/
