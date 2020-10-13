@@ -55,7 +55,7 @@ $ npm run dev
 Express server listening on http://0.0.0.0:3000, in development mode
 ```
 
-The API docs can be ound here: [Kitengi](https://heroku.com)
+The API docs can be ound here: [Kitengi](http://www.kiteng3.com/)
 
 ## TODO
 
