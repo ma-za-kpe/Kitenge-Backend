@@ -23,14 +23,25 @@ var reviewRouter = require("./routes/review");
 var cartRouter = require("./routes/cart");
 var developerRouter = require("./routes/developer");
 var vendorRouter = require("./routes/vendor");
+var momoRouter = require("./routes/momo");
 
 // db
-// require("dotenv").config();
+require("dotenv").config(); // disable this while pushing to production
 require("./config/db");
 
 var app = express();
 
 app.use(bodyParser.json());
+
+//options
+const options = {
+  setHeaders: function (res, path, stat) {
+    res.set('X-Reference-Id', 'f03f2cea-8647-4c74-a6a9-124f87ab3fe6')
+    res.set('Ocp-Apim-Subscription-Key', '50d369f7e39340ceb8b11d1cee86a434')
+  }
+}
+
+app.use(express.static('public', options))
 
 // Set static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -80,6 +91,7 @@ app.use("/api/v2/kiosk", kioskRouter);
 app.use("/api/v2/item", itemRouter);
 app.use("/api/v2/review", reviewRouter);
 app.use("/api/v2/cart", cartRouter);
+app.use("/api/v2/momo", momoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
